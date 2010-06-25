@@ -1,0 +1,19 @@
+Index: .htaccess
+===================================================================
+RCS file: /cvs/drupal/drupal/.htaccess,v
+retrieving revision 1.90.2.5
+diff -u -p -r1.90.2.5 .htaccess
+--- .htaccess	2 Feb 2010 07:25:22 -0000	1.90.2.5
++++ .htaccess	25 Jun 2010 23:21:32 -0000
+@@ -106,6 +106,11 @@ DirectoryIndex index.php
+   # uncomment the following line:
+   # RewriteBase /
+ 
++  # Rewrite all requests to SSL
++  RewriteEngine On
++  RewriteCond %{HTTPS} off
++  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R,L]
++
+   # Rewrite URLs of the form 'x' to the form 'index.php?q=x'.
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
