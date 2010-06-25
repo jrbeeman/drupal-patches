@@ -10,3 +10,7 @@ projects[drupal][patch][] = http://github.com/jrbeeman/drupal-patches/raw/master
 
 ** htaccess-force_to_ssl.patch
    Force all requests to SSL using generic rewrites. Works on Drupal and Pressflow.
+
+** robots-disallow_all.patch
+   Instruct robots to ignore all content on the site. Useful for development sites
+   or sites you'd prefer to remain unseen by search indexes.
