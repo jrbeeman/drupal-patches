@@ -9,4 +9,4 @@ projects[drupal][patch][] = http://github.com/jrbeeman/drupal-patches/raw/master
 * Patches
 
 ** htaccess-force_to_ssl.patch
-   Force all requests to SSL using generic rewrites.
+   Force all requests to SSL using generic rewrites. Works on Drupal and Pressflow.
