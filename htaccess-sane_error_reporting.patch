@@ -1,0 +1,15 @@
+Index: .htaccess
+===================================================================
+RCS file: /cvs/drupal/drupal/.htaccess,v
+retrieving revision 1.90.2.5
+diff -u -p -r1.90.2.5 .htaccess
+--- .htaccess	2 Feb 2010 07:25:22 -0000	1.90.2.5
++++ .htaccess	14 Jul 2010 22:30:42 -0000
+@@ -113,4 +113,7 @@ DirectoryIndex index.php
+   RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+ </IfModule>
+ 
++# PHP Error reporting (E_ALL without E_NOTICE)
++php_value error_reporting 6135
++
+ # $Id: .htaccess,v 1.90.2.5 2010/02/02 07:25:22 dries Exp $
