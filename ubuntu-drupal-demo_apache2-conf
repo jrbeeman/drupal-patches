@@ -1,0 +1,28 @@
+<VirtualHost *:80>
+  DocumentRoot /var/www/drupal-demo
+  <Directory /var/www/drupal-demo>
+    Options All
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+    # Gzip html, css, js, etc.
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript application/json
+    # Set expires headers on html, css, js, etc.
+    <IfModule mod_expires.c>
+      ExpiresActive On
+      ExpiresByType text/html "access plus 1 seconds"
+      ExpiresByType image/gif "access plus 1 week"
+      ExpiresByType image/jpeg "access plus 1 week"
+      ExpiresByType image/png "access plus 1 week"
+      ExpiresByType text/css "access plus 1 week"
+      ExpiresByType text/javascript "access plus 1 week"
+      ExpiresByType application/x-javascript "access plus 1 week"
+    </IfModule>
+    # Set ETags
+    FileETag MTime Size
+  </Directory>
+
+  ErrorLog /var/log/apache2/drupal-demo_error.log
+  CustomLog /var/log/apache2/drupal-demo_access.log combined
+</VirtualHost>
+
